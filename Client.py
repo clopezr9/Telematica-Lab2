@@ -14,7 +14,7 @@ while True:
     if len(msg) != 0:
         msg= "<" + ip_address  + ">" + msg
         conn.request("POST", "/", msg.encode())
-        rsp  = conn.getresponse()
+        #rsp  = conn.getresponse()
 
     conn.request("POST","/get",ip_address.encode())
     rsp = conn.getresponse()
