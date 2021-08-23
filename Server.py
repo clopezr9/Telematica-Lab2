@@ -34,8 +34,8 @@ class ChatRequestHandler(BaseHTTPRequestHandler):
         else:
             content_len = int(self.headers.get('Content-Length'))
             msg = self.rfile.read(content_len)
-            print("SE SUPONE QUE ESTE ES EL MESAJA:" + msg)
             msg = msg.decode()
+            print("SE SUPONE QUE ESTE ES EL MESAJA:" + msg)
             msg_ip = msg.split("->")[0]
             for ip in messages:
                 if ip != msg_ip:
