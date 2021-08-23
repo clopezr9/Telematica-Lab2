@@ -16,7 +16,9 @@ def get_messages():
         conn.request("POST", "/get", ip_address.encode())
         rsp = conn.getresponse()
         d = rsp.read().decode()
-        print(d)
+        if len(d) != 0:
+            print(d)
+        time.sleep(3)
 
 thread = threading.Thread(target=get_messages, daemon=True)
 thread.start()
