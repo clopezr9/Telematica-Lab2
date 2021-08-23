@@ -12,14 +12,9 @@ conn = http.client.HTTPConnection(ip_address, port)
 while True:
     msg = input()
     if len(msg) != 0:
-        msg = ip_address + ">" + msg
-        conn.request('POST', "/", msg.encode())
-
-        rsp = conn.getresponse()
-
-        print(rsp.status, rsp.reason)
-        data_received = rsp.read()
-        print(data_received)
+        msg= "<" + ip_address  + ">" + msg
+        conn.request("POST", "/", msg.encode())
+        rsp  = conn.getresponse()
 
     conn.request("POST","/get",ip_address.encode())
     rsp = conn.getresponse()
