@@ -31,6 +31,20 @@ class ChatRequestHandler(BaseHTTPRequestHandler):
             messages[msg] = ""
             self.wfile.write(message.encode())
 
+        else:
+            content_len = int(self.headers.get('Content-Length'))
+            msg = self.rfile.read(content_len)
+            msg = msg.decode()
+            msg_ip = msg.split("->")[0]
+            for ip in messages:
+                if ip != msg_ip:
+                    message = messages.get(ip)
+                    message = message +"\n "+ msg
+                    messages[ip] = message
+            self.send_response(200)
+            self.send_header('content-type','text/html')
+            self.end_headers()
+
 
 def main():
     server = HTTPServer((ip_address, port),  ChatRequestHandler)
