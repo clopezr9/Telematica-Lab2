@@ -36,13 +36,10 @@ class ChatRequestHandler(BaseHTTPRequestHandler):
             content_len = int(self.headers.get('Content-Length'))
             msg = self.rfile.read(content_len)
             msg = msg.decode()
-            print("SE SUPONE QUE ESTE ES EL MESAJA:" + msg)
             msg_ip = msg.split("->")[0]
-            print(msg_ip)
             for ip in messages:
                 if ip != msg_ip:
                     message = messages.get(ip)
-                    print("QUE ESTA VUELTA?" + message)
                     message = message +"\n "+ msg
                     messages[ip] = message
             self.send_response(200)
