@@ -15,7 +15,7 @@ Todas las instancias deben contra con python 3, ademas de git y un edito de text
 </code></pre>
 
 Ademas se debe installar la biblioteca de requests con el siguiente comando:
-<pre><code> $ python3 -m pip install
+<pre><code> $ python3 -m pip install requests
 </code></pre>
 
 ## Ejecución
@@ -30,7 +30,7 @@ PUBLIC_IP_SERVER: La IP publica de la instancia que funciona como servidor.
 PUERTO: El puerto previamente seleccionado y abierto para TCP.
 
 ## Referencias
-https://gist.github.com/junian/99e402db918cbe150002dc8c6736feb6
-https://github.com/Shiroke-013/TET_LABS/blob/b29a91ebc31742a55285cf6fb8bf536a5241b9bb/Lab2/Chat_Server.py (threading)
-https://www.geeksforgeeks.org/http-request-methods-python-requests/
-https://www.codegrepper.com/code-examples/python/python+get+public+ip+address
+- https://gist.github.com/junian/99e402db918cbe150002dc8c6736feb6
+- https://github.com/Shiroke-013/TET_LABS/blob/b29a91ebc31742a55285cf6fb8bf536a5241b9bb/Lab2/Chat_Server.py (threading)
+- https://www.geeksforgeeks.org/http-request-methods-python-requests/
+- https://www.codegrepper.com/code-examples/python/python+get+public+ip+address
