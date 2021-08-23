@@ -24,7 +24,7 @@ class ChatRequestHandler(BaseHTTPRequestHandler):
         if self.path.endswith("/get"):
             content_len = int(self.headers.get('Content-Length'))
             msg = self.rfile.read(content_len).decode()
-            self.send_response(200, message=None)
+            self.send_response(200)
             self.send_header('content-type','text/html')
             self.end_headers()
             message = messages.get(msg)
@@ -34,6 +34,7 @@ class ChatRequestHandler(BaseHTTPRequestHandler):
         else:
             content_len = int(self.headers.get('Content-Length'))
             msg = self.rfile.read(content_len)
+            print("SE SUPONE QUE ESTE ES EL MESAJA:" + msg)
             msg = msg.decode()
             msg_ip = msg.split("->")[0]
             for ip in messages:
