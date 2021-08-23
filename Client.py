@@ -10,19 +10,14 @@ port = int(sys.argv[2])
 conn = http.client.HTTPConnection(ip_address, port)
 
 while True:
-    while True:
-        msg = input()
-        if len(msg) != 0:
-            msg=  ip_address  + "->" + msg
-            conn.request("POST", "/", msg.encode())
-            rsp  = conn.getresponse()
-
-        elif msg == "exit":
-            conn.close()
+    msg = input()
+    if len(msg) != 0:
+        msg=  ip_address  + "->" + msg
+        conn.request("POST", "/", msg.encode())
+        rsp  = conn.getresponse()
 
         conn.request("POST","/get",ip_address.encode())
         rsp = conn.getresponse()
         d = rsp.read().decode()
-        if len(d) != 0:
-            print(d)
+        print(d)
         
