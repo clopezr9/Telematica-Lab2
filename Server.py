@@ -37,6 +37,7 @@ class ChatRequestHandler(BaseHTTPRequestHandler):
             msg = msg.decode()
             print("SE SUPONE QUE ESTE ES EL MESAJA:" + msg)
             msg_ip = msg.split("->")[0]
+            print(msg_ip)
             for ip in messages:
                 if ip != msg_ip:
                     message = messages.get(ip)

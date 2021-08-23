@@ -18,7 +18,7 @@ while True:
 
         conn.request("POST","/get",ip_address.encode())
         rsp = conn.getresponse()
-        print(rsp)
-        d = rsp.read().decode()
+        d = rsp.read()
+        d2 = d.decode()
         print(d)
         
