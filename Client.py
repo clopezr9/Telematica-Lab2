@@ -1,6 +1,7 @@
 import sys
 import http.client
 import threading
+import time
 
 if len(sys.argv) != 3:
 	print ("Correct usage: script, IP address, port number")
@@ -18,7 +19,7 @@ def get_messages():
         d = rsp.read().decode()
         if len(d) != 0:
             print(d)
-        time.sleep(3)
+        time.sleep(1)
 
 thread = threading.Thread(target=get_messages, daemon=True)
 thread.start()
