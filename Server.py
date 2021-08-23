@@ -42,6 +42,7 @@ class ChatRequestHandler(BaseHTTPRequestHandler):
             for ip in messages:
                 if ip != msg_ip:
                     message = messages.get(ip)
+                    print("QUE ESTA VUELTA?" + message)
                     message = message +"\n "+ msg
                     messages[ip] = message
             self.send_response(200)
