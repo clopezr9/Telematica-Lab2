@@ -24,6 +24,7 @@ class ChatRequestHandler(BaseHTTPRequestHandler):
         if self.path.endswith("/get"):
             content_len = int(self.headers.get('Content-Length'))
             msg = self.rfile.read(content_len).decode()
+            print("Este mensaje que es?" + msg)
             self.send_response(200)
             self.send_header('content-type','text/html')
             self.end_headers()
