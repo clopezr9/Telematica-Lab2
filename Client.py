@@ -16,9 +16,8 @@ while True:
         conn.request("POST", "/", msg.encode())
         rsp  = conn.getresponse()
 
-        conn.request("POST","/get",ip_address.encode())
-        rsp = conn.getresponse()
-        d = rsp.read()
-        d2 = d.decode()
-        print(d)
+    conn.request("POST","/get",ip_address.encode())
+    rsp = conn.getresponse()
+    d = rsp.read().decode()
+    print(d)
         
