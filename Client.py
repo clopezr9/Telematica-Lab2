@@ -22,7 +22,7 @@ def get_messages():
         d = rsp.read().decode()
         if len(d) != 0:
             print(d)
-        time.sleep(10)
+        time.sleep(1)
 
 thread = threading.Thread(target=get_messages, daemon=True)
 thread.start()
