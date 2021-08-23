@@ -26,7 +26,7 @@ Luego de verificar esto se debe correr en la instancia servidor el archivo Serve
 Luego de tener el servidor corriendo se puede poner a correr los clientes que se desee de la siente manera:
 <pre><code> $ python3 Client1.py [PUBLIC_IP_SERVER] [PUERTO]
 </code></pre>
-PUBLIC_IP_SERVER: La IP publica de la instancia que funciona como servidor.
+PUBLIC_IP_SERVER: La IP publica de la instancia que funciona como servidor. <br />
 PUERTO: El puerto previamente seleccionado y abierto para TCP.
 
 ## Referencias
